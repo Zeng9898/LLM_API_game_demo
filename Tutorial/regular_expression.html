@@ -165,7 +165,7 @@
                 document.getElementById('messageInput').value = '';
             });
         }
-        
+
         function addToConversationHistory(role, text) {
             conversationHistory.push({
                 "role": role,
@@ -177,7 +177,8 @@
 
         function displayMessage(message, sender) {
             var messageElement = document.createElement('div');
-            messageElement.textContent = message;
+            // 呼叫 formatText 並將結果存入變數中
+            // 賦予 messageElement.innerHTML 整理過的字串樣式 
             messageElement.classList.add('message');
             if (sender === 'user') {
                 messageElement.classList.add('userMessage');
@@ -210,7 +211,13 @@
                 }
             }
         }
+
+        function formatText(text) {
+            let formattedText = text.replace( 輸入規則, '<br><strong>$1</strong>');
+            formattedText = formattedText.replace( 輸入規則, '<br>$1');
+            return formattedText;
+        }
     </script>
 </body>
 
-</html>
+</html> 
