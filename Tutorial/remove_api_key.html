@@ -114,9 +114,10 @@
     <script>
         var conversationHistory = [];
 
-        // 應新增 api key 變數並使用 prompt 獲得
+        // 此處應新增 apiKey 變數，並透過 prompt 視窗取得
 
-        if (//應輸入條件) {
+        if (此處應輸入判斷條件) {
+            alert("API key and name are required to use the chatroom.");
         } else {
             document.getElementById('messageForm').addEventListener('submit', function (event) {
                 event.preventDefault();
@@ -125,7 +126,7 @@
                 addToConversationHistory('user', message);
                 displayMessage(message, 'user');
 
-                fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + '此處應改成 api key 變數', {
+                fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + '此處應修改成 apiKey 變數', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -196,11 +197,11 @@
                 console.log(scene);
                 // 檢查scene是否包含"宿舍"
                 if (scene.includes("宿舍")) {
-                    document.getElementById('sceneImage').innerHTML = '<img src="./img/dorm.jpeg" alt="Dorm" style="width:500px;">';
+                    document.getElementById('sceneImage').innerHTML = '<img src="../img/dorm.jpeg" alt="Dorm" style="width:500px;">';
                 } else if (scene.includes("聚會")) {
-                    document.getElementById('sceneImage').innerHTML = '<img src="./img/party.jpeg" alt="Dorm" style="width:500px;">';
+                    document.getElementById('sceneImage').innerHTML = '<img src="../img/party.jpeg" alt="Dorm" style="width:500px;">';
                 } else if (scene.includes("圖書館")) {
-                    document.getElementById('sceneImage').innerHTML = '<img src="./img/library.jpeg" alt="Dorm" style="width:500px;">';
+                    document.getElementById('sceneImage').innerHTML = '<img src="../img/library.jpeg" alt="Dorm" style="width:500px;">';
                 }
                 else {
                     // 如果不包含"宿舍"，可以在這裡處理其他情況或者不進行任何操作
