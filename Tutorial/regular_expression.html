@@ -177,8 +177,8 @@
 
         function displayMessage(message, sender) {
             var messageElement = document.createElement('div');
-            var formatMessage = formatText(message);
-            messageElement.innerHTML = formatMessage;
+            // 呼叫 formatTest 並傳入 message 當作參數，最後將結果存入變數
+            // 將 messageElement 的 innerHTML 設置為經過處理後的樣式
             messageElement.classList.add('message');
             if (sender === 'user') {
                 messageElement.classList.add('userMessage');
@@ -213,9 +213,9 @@
         }
 
         function formatText(text) {
-            let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<br><strong>$1</strong>');
+            let formattedText = text.replace(填入正則表達式, '<br><strong>$1</strong>');
 
-            formattedText = formattedText.replace(/\*(.*?)\s/g, '<br>$1');
+            formattedText = formattedText.replace(填入正則表達式, '<br>$1');
 
             return formattedText;
         }
