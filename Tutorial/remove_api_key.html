@@ -114,9 +114,9 @@
     <script>
         var conversationHistory = [];
 
-        var apiKey = prompt("Please enter your API key:", "");
+        // 宣告 apiKey 變數並傳入 prompt 得到的值
 
-        if (!apiKey) {
+        if (填入判斷式) {
             alert("API key and name are required to use the chatroom.");
         } else {
             document.getElementById('messageForm').addEventListener('submit', function (event) {
@@ -126,7 +126,7 @@
                 addToConversationHistory('user', message);
                 displayMessage(message, 'user');
 
-                fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey, {
+                fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + '修改為 apiKey 變數', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
